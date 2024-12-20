@@ -1,0 +1,15 @@
+services:
+  bds:
+    image: itzg/minecraft-bedrock-server
+    environment:
+      EULA: "TRUE"
+      SERVER_NAME: "Sam's Bedrock Server"
+      MAX_PLAYERS: 5
+      GAMEMODE: "survival"
+    ports:
+      - "19132:19132/udp"
+    volumes:
+      - ./data:/data
+    stdin_open: true
+    tty: true
+    restart: always
